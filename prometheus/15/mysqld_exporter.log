@@ -1,0 +1,11 @@
+root@node1:/opt/mysqld_exporter# sudo -u mysqld_exporter ./mysqld_exporter
+level=info ts=2021-06-22T17:04:32.508Z caller=mysqld_exporter.go:277 msg="Starting msqyld_exporter" version="(version=0.13.0, branch=HEAD, revision=ad2847c7fa67b9debafccd5a08bacb12fc9031f1)"
+level=info ts=2021-06-22T17:04:32.508Z caller=mysqld_exporter.go:278 msg="Build context" (gogo1.16.4,userroot@e2043849cb1f,date20210531-07:30:16)=(MISSING)
+level=info ts=2021-06-22T17:04:32.509Z caller=mysqld_exporter.go:293 msg="Scraper enabled" scraper=global_status
+level=info ts=2021-06-22T17:04:32.510Z caller=mysqld_exporter.go:293 msg="Scraper enabled" scraper=global_variables
+level=info ts=2021-06-22T17:04:32.510Z caller=mysqld_exporter.go:293 msg="Scraper enabled" scraper=slave_status
+level=info ts=2021-06-22T17:04:32.511Z caller=mysqld_exporter.go:293 msg="Scraper enabled" scraper=info_schema.innodb_cmp
+level=info ts=2021-06-22T17:04:32.511Z caller=mysqld_exporter.go:293 msg="Scraper enabled" scraper=info_schema.innodb_cmpmem
+level=info ts=2021-06-22T17:04:32.511Z caller=mysqld_exporter.go:293 msg="Scraper enabled" scraper=info_schema.query_response_time
+level=info ts=2021-06-22T17:04:32.512Z caller=mysqld_exporter.go:303 msg="Listening on address" address=:9104
+level=info ts=2021-06-22T17:04:32.513Z caller=tls_config.go:191 msg="TLS is disabled." http2=false
