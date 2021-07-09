@@ -1,0 +1,34 @@
+cluster.name: unfilled-cluster
+node.name: cluster-node-1
+node.master: true
+node.data: true
+
+network.host: 10.114.0.6
+http.port: 9200
+
+discovery.seed_hosts: ["10.114.0.6", "10.114.0.3", "10.114.0.7"]
+cluster.initial_master_nodes: ["cluster-node-1", "cluster-node-2", "cluster-node-3"]
+discovery.zen.minimum_master_nodes: 2
+
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+
+bootstrap.memory_lock: true
+
+
+## https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
+## curl -XGET 'http://10.114.0.6:9200/_cluster/health?pretty'
+## curl -XGET 'http://10.114.0.6:9200/_cluster/state?pretty'
+## https://logz.io/blog/elasticsearch-cluster-tutorial/
+## In /etc/sysconfig/elasticsearch set: MAX_LOCKED_MEMORY=unlimited . ES_HEAP_SIZE must also be set.
+## In /usr/lib/systemd/system/elasticsearch.service set: LimitMEMLOCK=infinity.
+
+
+curl -XPUT http://10.114.0.6:9200/syslogs -H "Content-Type: application/json" -d '{"settings": { "index": {"number_of_shards": 3, "number_of_replicas": 2 } } }'
+
+curl -XPUT http://10.114.0.6:9200/applogs -H "Content-Type: application/json" -d '{"settings": { "index": {"number_of_shards": 3, "number_of_replicas": 2 } } }'
+
+curl -XGET http://10.114.0.6:9200/_cat/shards/applogs
+
+
+curl -XGET http://10.114.0.6:9200/_cat/shards/syslogs
