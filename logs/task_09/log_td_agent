@@ -1,0 +1,22 @@
+<source>
+  @type kafka
+
+  brokers 10.114.0.2:9092
+  topics topic
+  format json
+  add_prefix from_kafka
+</source>
+
+<match **>
+  @type elasticsearch
+
+  host localhost
+  port 9200
+  logstash_format true
+
+  include_tag_key true
+  tag_key @log_name
+</match>
+
+
+
