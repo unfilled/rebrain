@@ -1,0 +1,30 @@
+<ch_user>
+    <password>ch_password</password>
+    <access_management>0</access_management>
+
+    <networks incl="networks" replace="replace">
+	    <ip>127.0.0.1</ip>
+    </networks>
+
+    <profile>default</profile>
+    <quota>default</quota>
+</ch_user>
+
+<!-- profile
+        <ronly>
+           <readonly>1</readonly>
+           <max_execution_time>180</max_execution_time>
+        </ronly>
+-->
+
+<!-- quotas
+
+<user>
+    <interval>
+        <duration>3600</duration>
+        <queries>100</queries>
+        <read_rows>10000000</read_rows>
+    </interval>
+</user>
+
+-->

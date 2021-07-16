@@ -1,0 +1,80 @@
+<yandex>
+    <clickhouse_remote_servers>
+        <mycluster>
+            <shard>
+                <replica>
+                    <host>10.114.0.3</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>10.114.0.4</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+            <shard>
+                <replica>
+                    <host>10.114.0.5</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>10.114.0.2</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </mycluster>
+    </clickhouse_remote_servers>
+
+    <zookeeper-servers>
+        <node index="1">
+            <host>10.114.0.3</host> 
+            <port>2181</port> 
+        </node>
+        <node index="2">
+            <host>10.114.0.4</host> 
+            <port>2181</port> 
+        </node>
+        <node index="3">
+            <host>10.114.0.5</host> 
+            <port>2181</port> 
+        </node>
+    </zookeeper-servers>
+
+    <macros>
+        <cluster>mycluster</cluster>
+        <replica>10.114.0.3</replica> 
+        <shard>01</shard> 
+    </macros>
+
+<!--
+node 1
+    <macros>
+        <cluster>mycluster</cluster>
+        <replica>10.114.0.3</replica> 
+        <shard>01</shard> 
+    </macros>
+
+node 2
+    <macros>
+        <cluster>mycluster</cluster>
+        <replica>10.114.0.4</replica> 
+        <shard>01</shard> 
+    </macros>
+
+node 3
+    <macros>
+        <cluster>mycluster</cluster>
+        <replica>10.114.0.5</replica> 
+        <shard>02</shard> 
+    </macros>
+
+node 4
+    <macros>
+        <cluster>mycluster</cluster>
+        <replica>10.114.0.2</replica> 
+        <shard>02</shard> 
+    </macros>
+-->
+
+
+
+</yandex>

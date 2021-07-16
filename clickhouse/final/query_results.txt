@@ -1,0 +1,109 @@
+--node1 
+--select * from events_local;
+Query id: 8c4cb249-d9e3-40f7-b637-aa8938c0d64d
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  1 │ title1 │ description1 │ content1 │ 2021-07-16 │
+│  2 │ title2 │ description2 │ content2 │ 2021-07-16 │
+│  5 │ title5 │ description5 │ content5 │ 2021-07-16 │
+│  7 │ title7 │ description7 │ content7 │ 2021-07-16 │
+│  9 │ title9 │ description9 │ content9 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+--select * from events_distributed;
+Query id: 65b43c86-b308-4440-ba2b-10becc15a77e
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  3 │ title3 │ description3 │ content3 │ 2021-07-16 │
+│  4 │ title4 │ description4 │ content4 │ 2021-07-16 │
+│  6 │ title6 │ description6 │ content6 │ 2021-07-16 │
+│  8 │ title8 │ description8 │ content8 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  1 │ title1 │ description1 │ content1 │ 2021-07-16 │
+│  2 │ title2 │ description2 │ content2 │ 2021-07-16 │
+│  5 │ title5 │ description5 │ content5 │ 2021-07-16 │
+│  7 │ title7 │ description7 │ content7 │ 2021-07-16 │
+│  9 │ title9 │ description9 │ content9 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+
+--node2
+--select * from events_local;
+Query id: c552b1a3-e009-4fd8-a565-def64b7cd1e1
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  1 │ title1 │ description1 │ content1 │ 2021-07-16 │
+│  2 │ title2 │ description2 │ content2 │ 2021-07-16 │
+│  5 │ title5 │ description5 │ content5 │ 2021-07-16 │
+│  7 │ title7 │ description7 │ content7 │ 2021-07-16 │
+│  9 │ title9 │ description9 │ content9 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+--select * from events_distributed;
+Query id: fc4eb71b-b1d7-4503-87d4-20bc9ba87711
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  1 │ title1 │ description1 │ content1 │ 2021-07-16 │
+│  2 │ title2 │ description2 │ content2 │ 2021-07-16 │
+│  5 │ title5 │ description5 │ content5 │ 2021-07-16 │
+│  7 │ title7 │ description7 │ content7 │ 2021-07-16 │
+│  9 │ title9 │ description9 │ content9 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  3 │ title3 │ description3 │ content3 │ 2021-07-16 │
+│  4 │ title4 │ description4 │ content4 │ 2021-07-16 │
+│  6 │ title6 │ description6 │ content6 │ 2021-07-16 │
+│  8 │ title8 │ description8 │ content8 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+
+--node3
+--select * from events_local;
+Query id: 73056ac4-5525-45f5-8c64-6b4acaa72884
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  3 │ title3 │ description3 │ content3 │ 2021-07-16 │
+│  4 │ title4 │ description4 │ content4 │ 2021-07-16 │
+│  6 │ title6 │ description6 │ content6 │ 2021-07-16 │
+│  8 │ title8 │ description8 │ content8 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+--select * from events_distributed;
+Query id: b5239c23-adba-4a4e-ad08-1f9fc6e071c7
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  1 │ title1 │ description1 │ content1 │ 2021-07-16 │
+│  2 │ title2 │ description2 │ content2 │ 2021-07-16 │
+│  5 │ title5 │ description5 │ content5 │ 2021-07-16 │
+│  7 │ title7 │ description7 │ content7 │ 2021-07-16 │
+│  9 │ title9 │ description9 │ content9 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  3 │ title3 │ description3 │ content3 │ 2021-07-16 │
+│  4 │ title4 │ description4 │ content4 │ 2021-07-16 │
+│  6 │ title6 │ description6 │ content6 │ 2021-07-16 │
+│  8 │ title8 │ description8 │ content8 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+
+--node4
+--select * from events_local;
+Query id: fae1bf5d-f9a8-4298-b1ed-3289f3b59656
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  3 │ title3 │ description3 │ content3 │ 2021-07-16 │
+│  4 │ title4 │ description4 │ content4 │ 2021-07-16 │
+│  6 │ title6 │ description6 │ content6 │ 2021-07-16 │
+│  8 │ title8 │ description8 │ content8 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+--select * from events_distributed;
+Query id: 3df243a1-4e86-4cc4-ab67-bf623aac29bf
+
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  3 │ title3 │ description3 │ content3 │ 2021-07-16 │
+│  4 │ title4 │ description4 │ content4 │ 2021-07-16 │
+│  6 │ title6 │ description6 │ content6 │ 2021-07-16 │
+│  8 │ title8 │ description8 │ content8 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘
+┌─id─┬─title──┬─description──┬─content──┬───────date─┐
+│  1 │ title1 │ description1 │ content1 │ 2021-07-16 │
+│  2 │ title2 │ description2 │ content2 │ 2021-07-16 │
+│  5 │ title5 │ description5 │ content5 │ 2021-07-16 │
+│  7 │ title7 │ description7 │ content7 │ 2021-07-16 │
+│  9 │ title9 │ description9 │ content9 │ 2021-07-16 │
+└────┴────────┴──────────────┴──────────┴────────────┘

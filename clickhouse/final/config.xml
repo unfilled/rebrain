@@ -1,0 +1,5 @@
+    <remote_servers incl="clickhouse_remote_servers" />
+    <zookeeper incl="zookeeper-servers" optional="true" />
+    <macros incl="macros" optional="true" />
+    
+    <include_from>/etc/clickhouse-server/cluster.xml</include_from>
