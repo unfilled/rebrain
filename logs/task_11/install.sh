@@ -4,7 +4,7 @@ sudo apt install nginx
 
 
 sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install apt-transport-https openjdk-8-jre-headless uuid-runtime pwgen
+sudo apt-get install -y apt-transport-https openjdk-8-jre-headless uuid-runtime pwgen
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv     9DA31620334BD75D9DCB49F368818C72E52529D4
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" |  sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
@@ -39,13 +39,15 @@ sudo apt-get update && sudo apt-get install graylog-server
 # Генерируем пароль из 16 символов
 pwgen -N 1 -s 16
 # Результат записываем 
+4U7MawTsmPBCfk66
 # Далее сгенерируйте хеш для пароля пользователя admin, указав значение пароля:
-echo -n <ваш_пароль> | sha256sum
+echo -n 4U7MawTsmPBCfk66 | sha256sum
 
+72d775c0b6721d6d8311624152970aa2c80efc538da77e4eadb3ca259c16f4c1
 
 sudo nano /etc/graylog/server/server.conf
 
-{хэш}
+root_password_sha2 {хэш}
 http_bind_address = 192.168.100.2:9000
 
 sudo systemctl daemon-reload
