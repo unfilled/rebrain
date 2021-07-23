@@ -52,4 +52,6 @@ print(sorted(log_list, key = lambda k: k[7:15])[2])
 pc_log = list(filter(lambda l: l.find(' PC-00102 ') >= 0, log_list))
 
 # 2.4 Используя списковые включения, сформируйте список сообщений логов, которые записал процесс kernel. 
-[print(': '.join(rec.split(': ')[1:])) for rec in list(filter(lambda l: l.find(' kernel: ') >= 0, log_list))]
+messages = [rec[rec.find(': ') + 2:] for rec in list(filter(lambda l: l.find(' kernel: ') >= 0, log_list))]
+
+print (messages)
