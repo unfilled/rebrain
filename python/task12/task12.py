@@ -1,6 +1,5 @@
 import psutil
 import os
-import time
 
 class PC_Memory:
     def __init__(self, pc_id, user_name, memory_total, memory_used, memory_percent = None):
