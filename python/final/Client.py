@@ -7,7 +7,7 @@ class Client:
         else:
             try:
                 self.ip_address = requests.get('https://api.my-ip.io/ip').text
-            except:
+            except requests.exceptions.RequestException:
                 self.ip_address = '127.0.0.1'
 
         # hostname
@@ -38,23 +38,24 @@ class Client:
             r = requests.post(url, data)
             if r.status_code >= 200 and r.status_code < 300:    
                 #success don't have to log
-                pass
+                return True
             else:
                 #log error
                 logging.error(f"bad status code: {r.status_code}")
-        except:
+                return False
+        except requests.exceptions.RequestException as e:
             # some logging here
-            logging.error("execption whlie making post request")
+            logging.error(f"execption whlie making post request: {e}")
+            return False
 
     def register(self, url):
         data = {}
         data['ip_address'] = self.ip_address
         data['name'] = self.name
         data['description'] = self.description
-        try:
-            self.make_post (url, data)
+        if self.make_post (url, data):
             logging.info("server registered")
-        except:
+        else:
             logging.error("error registering client")
 
     def collect_system_info(self):

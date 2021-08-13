@@ -8,5 +8,5 @@ c = Client.Client()
 
 while True:
     info = c.collect_system_info()
-    c.make_post('some url', info)
+    c.make_post('http://127.0.0.1:8000/api/servers/add', info)
     time.sleep(60)
