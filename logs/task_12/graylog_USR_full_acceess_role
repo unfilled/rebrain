@@ -1,0 +1,15 @@
+usrfull.json
+{
+  "name": "USR_full_acceess",
+  "description": "users, streams, rules",
+  "permissions": [
+    "users:tokencreate", "users:rolesedit", "users:edit", "users:permissionsedit", "users:list", "users:tokenlist", "users:create", "users:passwordchange", "users:tokenremove", "roles:edit", "roles:create", "roles:read", "roles:delete", "streams:changestate", "streams:edit", "streams:create", "streams:read", "indexsets:read", "inputs:read", "indices:read"
+  ],
+  "read_only": false
+}
+
+
+curl -v -XPOST -u admin:admin -H 'Content-Type: application/json' -H 'X-Requested-By: cli' http://68.183.72.115:9000/api/roles -d @usrfull.json
+
+#get permissions by users
+curl -XGET -u admin:admin 'http://68.183.72.115:9000/api/users/sys_admin_junior?pretty=true' > sys_admin_junior_rights
